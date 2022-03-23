@@ -11,16 +11,7 @@ kasa.instPak (packages)
 setwd("C:/Users/kangs/Desktop/sorafenib_analysis/")
 
 RNAseq <- fread("FPKM.txt") %>% as.data.frame()
-samples <- fread("samples.txt") %>% as.data.frame()
-
-RNAseq.m <- RNAseq[,-1] %>% as.matrix()
-rownames(RNAseq.m) <- RNAseq[,1] %>% as.vector()
-RNAseq.m.log <- log2(RNAseq.m+1)
-RNAseq.m.log.df <- RNAseq.m.log %>% as.data.frame %>% rownames_to_column()
-write_delim(RNAseq.m.log.df,file = "FPKM_log2.txt",delim = "\t")
-
-
-RNAseq.t <- RNAseq.m.log.df %>% kasa.transposeMatrix()
+RNAseq.t <- RNAseq %>% kasa.transposeMatrix()
 
 RNAseq.t.join <- inner_join(x = samples,y = RNAseq.t,by=("sample"="sample"))
 
