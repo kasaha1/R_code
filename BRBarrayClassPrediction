@@ -36,13 +36,13 @@ Z_scoring <- TRUE
 
 if(!file.exists("OutputBRBarray")){dir.create("OutputBRBarray")}
 
-trainingDataset_r <- fread("trainingset_BRBarray.txt") %>% as.data.frame()
+trainingDataset_r <- fread("dataSet/trainingset_BRBarray.txt") %>% as.data.frame()
 colnames(trainingDataset_r)[1] <- "gene"
 
-trainingClass_r <- fread("trainingClass_BRBarray.txt") %>% as.data.frame()
+trainingClass_r <- fread("dataSet/trainingClass_BRBarray.txt") %>% as.data.frame()
 colnames(trainingClass_r) <- c("sample","class")
 
-predictDataset_r <- fread("predictSet_BRBarray.txt") %>% as.data.frame()
+predictDataset_r <- fread("dataSet/predictSet_BRBarray.txt") %>% as.data.frame()
 colnames(predictDataset_r)[1] <- "gene"
 # data cleaning ----
 
