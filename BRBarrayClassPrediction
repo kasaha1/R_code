@@ -130,6 +130,8 @@ if (generateHTML)
                       paste0(outputName, ".html")))
 
 # Output
-write_delim(x = trainingDataset,file = paste0(projectPath,"/trainingDataset.txt"),delim = "\t")
-write_delim(x = predictDataset,file = paste0(projectPath,"/predictDataset.txt"),delim = "\t")
-write_delim(x = trainingClass,file = paste0(projectPath,"/trainingClass.txt"),delim = "\t")
+write_delim(x = trainingDataset,file = paste0(projectPath,"/1_trainingDataset.txt"),delim = "\t")
+write_delim(x = predictDataset,file = paste0(projectPath,"/3_predictDataset.txt"),delim = "\t")
+write_delim(x = trainingClass,file = paste0(projectPath,"/2_trainingClass.txt"),delim = "\t")
+write_delim(x=resList$predNewSamples,file = paste0(projectPath,"/4_PredictionResults.txt"),delim = "\t")
+write_delim(x=resList$probNew,file = paste0(projectPath,"/5_probability_BCCP.txt"),delim = "\t")
